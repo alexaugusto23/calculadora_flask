@@ -37,9 +37,9 @@ def teste():
     get_path_atual = os.getcwd()
     os.chdir(get_path_atual)
     resultado_scripty = os.system("py test.py")
-    print(resultado_scripty)
+    #print(resultado_scripty)
 
-    return str(output)
+    return str(resultado_scripty)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
