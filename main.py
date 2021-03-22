@@ -18,19 +18,17 @@ def page_not_found(error):
 #routes
 @app.route("/")
 def raiz():
-    msg = "<h1>Digite na URL (/index/seu nome aqui) para iniciar a calculadora.</h1>"
-    return msg
+    return render_template("index.html")
 
 @app.route("/index/<string:nome>", methods=['GET', 'POST'])
 def index(nome = None):
-    msg = f"<h1>Olá {nome}, seja bem vindo a calculadora!</h1>\n<h3>Digite na URL (/operacoes/valor(ex 10)/valor(ex 30)/operação(ex soma)</h3>"
-    return msg
+    return render_template("home.html", msg = nome)
 
 @app.route("/operacoes/<int:a>/<int:b>/<string:operacao>", methods=['GET'])
 def operacoes(a, b, operacao):
     calculator = Calculadora()
     valor = calculator.realiza_calculo(a, b, operacao)
-    return str(valor)
+    return render_template("calculadora.html", operacao=operacao, a=a, b=b, valor=valor)
 
 @app.route("/teste", methods=['GET'])
 def teste():
@@ -39,7 +37,7 @@ def teste():
     resultado_scripty = os.system("py test.py")
     #print(resultado_scripty)
 
-    return str(resultado_scripty)
+    return render_template("teste.html", valor = resultado_scripty)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
