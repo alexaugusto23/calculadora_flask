@@ -32,6 +32,15 @@ def operacoes(a, b, operacao):
     valor = calculator.realiza_calculo(a, b, operacao)
     return str(valor)
 
+@app.route("/teste", methods=['GET'])
+def teste():
+    get_path_atual = os.getcwd()
+    os.chdir(get_path_atual)
+    resultado_scripty = os.system("py test.py")
+    print(resultado_scripty)
+
+    return str(output)
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
