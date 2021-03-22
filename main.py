@@ -34,7 +34,7 @@ def operacoes(a, b, operacao):
 def teste():
     get_path_atual = os.getcwd()
     os.chdir(get_path_atual)
-    resultado_scripty = os.system("py test.py")
+    resultado_scripty = os.system("python3 test.py > resultado.txt")
     #print(resultado_scripty)
 
     return render_template("teste.html", valor = resultado_scripty)
