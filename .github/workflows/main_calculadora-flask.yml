@@ -31,4 +31,4 @@ jobs:
       with:
         app-name: 'calculadora-flask'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f992f34539fe4a47b2bd61168475879e }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_163261301a88449ca70f9a3878831970 }}
