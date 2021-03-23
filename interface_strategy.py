@@ -19,3 +19,7 @@ class Soma(Operacao):
 class Subtracao(Operacao):
     def calcula(self, a,b):
         return a - b
+
+class Multiplicacao(Operacao):
+    def calcula(self, a,b):
+        return a * b

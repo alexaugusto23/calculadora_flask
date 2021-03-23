@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
     def test_func_subtracao_dois(self):
         calculator = Calculadora()
         test_subtracao = calculator.realiza_calculo(100, 99, "subtracao")
-        self.assertEqual(test_subtracao, 5)
+        self.assertEqual(test_subtracao, 1)
     
     def test_tem_valor(self):
         calculator = Calculadora()

@@ -1,4 +1,4 @@
-from interface_strategy import Soma, Divisao, Subtracao
+from interface_strategy import Multiplicacao, Soma, Divisao, Subtracao
 
 class OperacaoFactory():
 
@@ -11,6 +11,8 @@ class OperacaoFactory():
                 return Soma()
             elif tipo_operacao.lower() == "subtração" or tipo_operacao.lower() == "subtracao":
                 return Subtracao()
+            elif tipo_operacao.lower() == "multiplicação" or tipo_operacao.lower() == "Multiplicacao":
+                return Multiplicacao()
             raise AssertionError ("Operação não econtrada") 
         except AssertionError as erro:
             print(erro)

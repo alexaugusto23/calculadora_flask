@@ -24,7 +24,7 @@ def raiz():
 
 @app.route("/index/<string:nome>", methods=['GET', 'POST'])
 def index(nome = None):
-    return render_template("home.html", msg = nome)
+    return render_template("home.html", nome = nome)
 
 @app.route("/operacoes/<int:a>/<int:b>/<string:operacao>", methods=['GET'])
 def operacoes(a, b, operacao):
@@ -34,8 +34,9 @@ def operacoes(a, b, operacao):
 
 @app.route("/teste", methods=['GET'])
 def teste():
-
-    return render_template("teste.html")
+    ManagerFile.deleta_cria_file()
+    log = ReadFile.leitura_arquivo()
+    return render_template("teste.html", log = log)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
