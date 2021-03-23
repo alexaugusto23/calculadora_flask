@@ -20,7 +20,7 @@ class MyTestCase(unittest.TestCase):
     def test_func_subtracao_dois(self):
         calculator = Calculadora()
         test_subtracao = calculator.realiza_calculo(100, 99, "subtracao")
-        self.assertEqual(test_subtracao, 1)
+        self.assertEqual(test_subtracao, 5)
     
     def test_tem_valor(self):
         calculator = Calculadora()
@@ -29,6 +29,10 @@ class MyTestCase(unittest.TestCase):
 
        
 if __name__ == '__main__':
-    unittest.main()
+   log_file = 'log_file.txt'
+   with open(log_file, "w") as f:
+       runner = unittest.TextTestRunner(f)
+       unittest.main(testRunner=runner)
+       runner.close()
 
 #python -m unittest teste.py

@@ -1,4 +1,6 @@
 from calculadora import Calculadora
+from manage_file import ManagerFile
+from read_file import ReadFile
 from flask import Flask
 from flask import render_template
 from flask import redirect 
@@ -32,12 +34,8 @@ def operacoes(a, b, operacao):
 
 @app.route("/teste", methods=['GET'])
 def teste():
-    get_path_atual = os.getcwd()
-    os.chdir(get_path_atual)
-    resultado_scripty = os.system("python3 test.py > resultado.txt")
-    #print(resultado_scripty)
 
-    return render_template("teste.html", valor = resultado_scripty)
+    return render_template("teste.html")
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
